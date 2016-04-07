@@ -1,0 +1,137 @@
+{ "name": "Magik",
+  "scopeName": "source.magik",
+  "fileTypes": ["magik", "Magik", "MAGIK"],
+  "foldingStartMarker": "(_for|_if|_method)",
+  "foldingStopMarker": "(_endloop|_endif|_endmethod)",
+  "patterns": [
+  	{ "include": "#methods" },
+  	{ "include": "#symbols" },
+  	{ "include": "#packages" },
+	{ "include": "#numbers" },
+	{ "include": "#keywords" },
+	{ "include": "#builtins" },
+	{ "include": "#strings" },
+	{ "include": "#comments" }
+  ],
+  "repository": {
+  	"parameters": {
+  		"patterns": [
+  			{ 
+	  			"match": "\\w+",
+	          	"name": "variable.parameter.magik"
+        	}
+  		]
+  	},
+  	"methods": {
+  		"patterns": [
+  			{ "name": "meta.function.identifier.magik",
+		  		  "begin": "(\\w+)\\s*\\(",
+		  		  	"beginCaptures": {
+		  		  	    "0": { "name": "entity.name.function.magik" }
+		  		  	},
+		  		  "end": "\\)",
+		  		  "patterns": [
+		  		  	{ "include": "#comments" },
+	  				{ "include": "#symbols" },
+	  				{ "include": "#strings" },
+	  				{ "include": "#numbers" },
+	  				{ "include": "#keywords" },
+	  				{ "include": "#methods" },
+	  				{ "include": "#self" },
+	  				{ "include": "#methods" },
+	  				{ "include": "#parameters" }
+		  		  ]
+		  	} 
+  		]
+  	},
+  	"packages": {
+  		"patterns": [
+  			{  "name": "storage.modifier.magik",
+  			   "match": "\\w+:\\w+"
+  			},
+  			{
+  				"match": "(\\w+:\\w+)|((_package)\\s+(\\w+))",
+  				"captures": {
+  				    "0": { "name": "keyword.other.magik" },
+  				    "1": { "name": "storage.modifier.magik" }
+  				}
+  			}
+  		]
+  	},
+  	"strings": {
+  		"patterns": [
+  			{ "name": "string.quoted.double.magik",
+  			  "begin": "\"",
+  			  "end": "\"",
+  			  "patterns": [
+  			  		{  "name": "constant.character.escape.magik",
+  			  		   "match": "\\."
+  			  		}
+  			  ]
+  			}
+  		]
+  	},
+  	"comments": {
+  		"patterns": [
+  			{ "name": "comment.line.number-sign.magik",
+  			  "begin": "(#)",
+  			  "beginCaptures": {
+  			      "0": { "name": "punctuation.definition.comment.magik" }
+  			  },
+  			  "end": "\\n"
+  			}
+  		]
+  	},
+  	"numbers": {
+  		"patterns": [
+  			{  "name": "constant.numeric.magik",
+  			   "match": "\\b[0-9]+\\b"
+  			}
+  		]
+  	},
+  	"symbols": {
+  		"patterns": [
+  			{  "name": "keyword.control.untitled",
+  			   "match": "(:[a-zA-Z]+([0-9]|_|-|[a-zA-Z])*)",
+  			   "captures": {
+  			       "0": { "name": "constant.other.symbol.magik" }
+  			   }
+  			}
+  		]
+  	},
+  	"keywords": {
+  		"patterns": [
+  			{  "name": "keyword.control.magik",
+	           "match": "\\b(_if|_else|_elif|_endif|_loop|_endloop|_for|_over|_leave|_return|_then|_protect|_endprotect)\\b"
+	        },
+	        {  "name": "keyword.other.magik",
+	           "match": "\\b(_private|_optional|_method|_endmethod|_proc|_endproc|_is|_local)\\b"
+	        },
+	        {  "name": "keyword.operator.magik",
+	           "match": "[<<|>>|-|\\+|\\*|/|=|<>|~]{1}"
+	        },
+	        {  "name": "constant.language.magik",
+	           "match": "\\b(_true|_false|_unset|_maybe)\\b"
+	        }
+  		]
+  	},
+  	"builtins": {
+  		"patterns": [
+  			{  "name": "support.function.magik",
+  			   "match": "\\b(def_slotted_exemplar|def_package|define_shared_constant)\\b"
+  			},
+  			{ 
+  				"include": "#self" 
+  			}
+  		]
+  	},
+  	"self": {
+  		"patterns": [
+  			{  "name": "variable.language.magik",
+  			   "match": "\\b(_self)\\b"
+  			}
+  		]
+  	}
+  },
+  "uuid": "6b5b3a62-bc9f-452e-9887-8a78e98f044e"
+}
