@@ -1,4 +1,4 @@
-# SmallWorldMagikSublime
+# GE SW Magik Sublime Text Package
 
 # Featues
 * Syntax Highlight 
