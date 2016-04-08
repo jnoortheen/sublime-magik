@@ -1,0 +1,32 @@
+{
+	"scope": "source.magik",
+
+	"completions":
+	[
+		{ "trigger": "block", "contents": "_block ${1:@label}\n\t${2}\n_endblock\n" },
+		{ "trigger": "catch", "contents": "_catch ${1:@label}\n$2\n_endcatch\n" },
+		{ "trigger": "catchthrow", "contents": "_catch ${1:@label}\n$2\n_throw $3 _with ${4:return}\n$5\n_endcatch\n" },
+		{ "trigger": "continue", "contents": "_continue\n" },
+		{ "trigger": "elif", "contents": "_elif ${1:condition}\n_then\n\t" },
+		{ "trigger": "continuewith", "contents": "_continue ${1:@label} _with ${2:val}\n"},
+		{ "trigger": "definesharedcostant", "contents": "dfs" },
+		{ "trigger": "finally", "contents": "_finally _with ${2:val}\n" },
+		{ "trigger": "for", "contents": "_for ${1:a_val} _over ${2:collections}.${3:fast_keys}()\n_loop\n\t$4\n_endloop\n"},
+		{ "trigger": "handling", "contents": "_handling ${1:a_list} _with ${2:proc}()\n"},
+		{ "trigger": "if", "contents": "_if ${1:condition}\n_then\n\t$2\n_endif\n"},
+		{ "trigger": "ife", "contents": "_if ${1:condition}\n_then\n\t$2\n_else\n\t$3\n_endif\n"},
+		{ "trigger": "ifel", "contents": "_if ${1:condition1}\n_then\n\t$2\n_elif ${3:condition2}\n_then\n\t$4\n_endif\n"},
+		{ "trigger": "ifele", "contents": "_if ${1:condition1}\n_then\n\t$2\n_elif ${3:condition2}\n_then\n\t$4\n_else\n\t$5\n_endif\n"},
+		{ "trigger": "leave", "contents": "_leave"},
+		{ "trigger": "leavewith", "contents": "_leave ${1:@label} _with ${2:val}\n"},
+		{ "trigger": "lock", "contents": "_lock ${1:expression}\n$2\n_endlock\n"},
+		{ "trigger": "loop", "contents": "_loop\n\t$1\n_endloop\n"},
+		{ "trigger": "over", "contents": "_over ${1:range}\n_loop ${2:params}\n\t$3\n_endloop\n"},
+		{ "trigger": "pack", "contents": "_package ${1:sw}\n"},
+		{ "trigger": "proc", "contents": "${1:variable} << _proc@${2:name}(${3:args})\n\t\t$4\n\t_endproc"},
+		{ "trigger": "protect", "contents": "_protect\n\t$1\n_protection$2\n\t$3\n_endprotect\n"},
+		{ "trigger": "try", "contents": "_try _with ${1:cond}\n_when ${2:error}\n\t$3\n_endtry\n"},
+		{ "trigger": "throw", "contents": "_throw ${1:expression} _with ${2:val}\n"},
+		{ "trigger": "encode", "contents": "#% text_encoding = ${1:iso8859_1}\n"}
+	]
+}
