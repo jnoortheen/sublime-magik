@@ -21,6 +21,18 @@ patterns:
 - include: '#symbols'
 
 repository:
+  docstrings:
+    name: comment.block.documentation.magik
+    begin: (##)
+    captures:
+      '0': {name: punctuation.definition.comment.magik}
+    end: \n
+  comments:
+    name: comment.line.number-sign.magik
+    begin: (#)
+    beginCaptures:
+      "0": { name: punctuation.definition.comment.magik }
+    end: \n
   parameters:
     name: variable.parameter.magik
     match: \w+
@@ -30,26 +42,10 @@ repository:
     captures:
       "0": { name: keyword.other.magik }
       "1": { name: storage.modifier.magik }
-  chars:
-    name: constant.character.escape.magik
-    match: \.
   strings:
     name: string.quoted.double.magik
-    begin: \"|\'
+    begin: (\"|\')
     end: \"|\'
-    include: '#chars'
-  docstrings:
-    name: comment.block.documentation.magik
-    begin: (##\s)
-    captures:
-      '0': {name: punctuation.definition.comment.magik}
-    end: \n
-  comments:
-    name: comment.line.number-sign.magik
-    begin: (#\s)
-    beginCaptures:
-      "0": { name: punctuation.definition.comment.magik }
-    end: \n
   numbers:
     name: constant.numeric.magik
     match: \b[0-9]+\b
