@@ -1,0 +1,91 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Magik
+scopeName: source.magik
+fileTypes: [magik, Magik, MAGIK]
+uuid: a451e5fa-5ef0-47cb-8f77-57d09e40b794
+# foldingStartMarker: (_for|_if|_method)
+# foldingStopMarker: (_endloop|_endif|_endmethod)
+
+patterns:
+- include: '#blocks'
+- include: '#builtins'
+- include: '#comments'
+- include: '#docstrings'
+- include: '#keywords'
+- include: '#methods'
+- include: '#numbers'
+- include: '#operators'
+- include: '#packages'
+- include: '#strings'
+- include: '#symbols'
+
+repository:
+  parameters:
+    name: variable.parameter.magik
+    match: \w+
+  packages:
+    name: storage.modifier.magik
+    match: (\w+:\w+)|((_package)\s(\w+))
+    captures:
+      "0": { name: keyword.other.magik }
+      "1": { name: storage.modifier.magik }
+  chars:
+    name: constant.character.escape.magik
+    match: \.
+  strings:
+    name: string.quoted.double.magik
+    begin: \"|\'
+    end: \"|\'
+    include: '#chars'
+  docstrings:
+    name: comment.block.documentation.magik
+    begin: (##\s)
+    captures:
+      '0': {name: punctuation.definition.comment.magik}
+    end: \n
+  comments:
+    name: comment.line.number-sign.magik
+    begin: (#\s)
+    beginCaptures:
+      "0": { name: punctuation.definition.comment.magik }
+    end: \n
+  numbers:
+    name: constant.numeric.magik
+    match: \b[0-9]+\b
+  symbols:
+    name: variable.other.magik
+    match: (:[a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*))
+    captures:
+      '0': {name: constant.other.symbol.magik}
+  operators:
+    name: keyword.operator.magik
+    match: ([<<|>>|\-|\+|\*|/|=|<>|~])
+  keywords:
+    name: keyword.control.magik
+    match: \b(\_[a-zA-Z]+)\b
+  builtins:
+    name: support.function.magik
+    match: \b(def_slotted_exemplar|def_package|define_shared_constant)\b
+    include: '#self'
+  self:
+    name: variable.language.magik
+    match: \b(_self)\b
+  methods:
+    name: entity.name.function.magik
+    begin: (\w+)\s*\(
+    # beginCaptures:
+    #   name: 
+    end: \)
+    patterns:
+    - include: '#blocks'
+    - include: '#symbols'
+    - include: '#packages'
+    - include: '#numbers'
+    - include: '#keywords'
+    - include: '#builtins'
+    - include: '#strings'
+    - include: '#comments'
+    - include: '#docstrings'
+    - include: '#parameters'
+    - include: '#self'

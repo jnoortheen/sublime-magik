@@ -5,13 +5,15 @@
   "foldingStopMarker": "(_endloop|_endif|_endmethod)",
   "patterns": [
   	{ "include": "#methods" },
+    { "include": "#blocks" },
   	{ "include": "#symbols" },
   	{ "include": "#packages" },
-	{ "include": "#numbers" },
-	{ "include": "#keywords" },
-	{ "include": "#builtins" },
-	{ "include": "#strings" },
-	{ "include": "#comments" }
+  	{ "include": "#numbers" },
+  	{ "include": "#keywords" },
+  	{ "include": "#builtins" },
+  	{ "include": "#strings" },
+  	{ "include": "#comments" },
+    { "include": "#docstring" }
   ],
   "repository": {
   	"parameters": {
@@ -31,7 +33,8 @@
 		  		  	},
 		  		  "end": "\\)",
 		  		  "patterns": [
-		  		  	{ "include": "#comments" },
+            { "include": "#docstring" },
+		  		  { "include": "#comments" },
 	  				{ "include": "#symbols" },
 	  				{ "include": "#strings" },
 	  				{ "include": "#numbers" },
@@ -71,17 +74,28 @@
   			}
   		]
   	},
-  	"comments": {
-  		"patterns": [
-  			{ "name": "comment.line.number-sign.magik",
-  			  "begin": "(#)",
-  			  "beginCaptures": {
-  			      "0": { "name": "punctuation.definition.comment.magik" }
-  			  },
-  			  "end": "\\n"
-  			}
-  		]
-  	},
+    "docstring": {
+      "patterns": [
+        { "name": "comment.block.magik",
+          "begin": "(##)",
+          "beginCaptures": {
+              "0": { "name": "definition.comment.block.docstring.magik" }
+          },
+          "end": "\\n"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.magik",
+          "begin": "(#)",
+          "beginCaptures": {
+              "0": { "name": "punctuation.definition.comment.magik" }
+          },
+          "end": "\\n"
+        }
+      ]
+    },
   	"numbers": {
   		"patterns": [
   			{  "name": "constant.numeric.magik",
@@ -90,22 +104,22 @@
   		]
   	},
   	"symbols": {
-  		"patterns": [
-  			{  "name": "keyword.control.untitled",
-  			   "match": "(:[a-zA-Z]+([0-9]|_|-|[a-zA-Z])*)",
-  			   "captures": {
-  			       "0": { "name": "constant.other.symbol.magik" }
-  			   }
-  			}
-  		]
+      "patterns": [
+          {  "name": "variable.other.magik",
+           "match": "(:(\\|)[a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*)(\\|))",
+           "captures": {
+               "0": { "name": "constant.other.symbol.magik" }
+              }
+          }          
+      ]
   	},
   	"keywords": {
   		"patterns": [
   			{  "name": "keyword.control.magik",
-	           "match": "\\b(_if|_else|_elif|_endif|_loop|_endloop|_for|_over|_leave|_return|_then|_protect|_endprotect)\\b"
+	           "match": "\\b(_if|_else|_elif|_endif|_loop|_endloop|_for|_over|_leave|_continue|_return|_then|_protect|_endprotect|_protection)\\b"
 	        },
 	        {  "name": "keyword.other.magik",
-	           "match": "\\b(_private|_optional|_method|_endmethod|_proc|_endproc|_is|_local)\\b"
+	           "match": "\\b(_private|_optional|_method|_endmethod|_proc|_endproc|_is|_local|_block|_endblock)\\b"
 	        },
 	        {  "name": "keyword.operator.magik",
 	           "match": "[<<|>>|-|\\+|\\*|/|=|<>|~]{1}"
