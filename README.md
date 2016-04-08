@@ -1,8 +1,9 @@
 # SmallWorldMagikSublime
-Syntax Highlight for GE Smallworld Magik Language in sublime text. 
 
+# Featues
+* Syntax Highlight 
+* Snippets 
+* comment/uncomment for GE Smallworld Magik Language in sublime text. 
+
+# How To . . . :
 Copy the Magik folder to  ./packages directory (From Sublime text menu bar Preferences-> Browse Packages) to get syntax highlighting.
-
-Note: This may work with TextMate and similar editors which support .tmLanguage format.
-
-Thanks to "https://github.com/armed/language-magik"
