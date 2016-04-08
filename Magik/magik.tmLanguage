@@ -68,17 +68,10 @@
 			<key>name</key>
 			<string>support.function.magik</string>
 		</dict>
-		<key>chars</key>
-		<dict>
-			<key>match</key>
-			<string>\.</string>
-			<key>name</key>
-			<string>constant.character.escape.magik</string>
-		</dict>
 		<key>comments</key>
 		<dict>
 			<key>begin</key>
-			<string>(#\s)</string>
+			<string>(#)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -95,7 +88,7 @@
 		<key>docstrings</key>
 		<dict>
 			<key>begin</key>
-			<string>(##\s)</string>
+			<string>(##)</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
@@ -223,11 +216,9 @@
 		<key>strings</key>
 		<dict>
 			<key>begin</key>
-			<string>\"|\'</string>
+			<string>(\"|\')</string>
 			<key>end</key>
 			<string>\"|\'</string>
-			<key>include</key>
-			<string>#chars</string>
 			<key>name</key>
 			<string>string.quoted.double.magik</string>
 		</dict>
