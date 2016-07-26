@@ -1,0 +1,40 @@
+[
+
+	// for the xml, html files
+	{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": { "single_line": false } },
+
+	// for magik files
+	// to format magik file
+	{
+		"keys": ["ctrl+alt+\\"],
+		"command": "format_magik",
+		"context": [{
+			"key": "selector",
+			"operator": "equal",
+			"operand": "text.magik, source.magik"
+		}]
+	},
+	// put trace comment before line
+	{
+		"keys": ["ctrl+alt+t"],
+		"command": "put_write_trace",
+		"args" : { "after": false},
+		"context": [{
+			"key": "selector",
+			"operator": "equal",
+			"operand": "text.magik, source.magik"
+		}]
+	},
+	// put trace comment after line
+	{
+		"keys": ["ctrl+alt+shift+t"],
+		"command": "put_write_trace",
+		"args" : { "after": true},
+		"context": [{
+			"key": "selector",
+			"operator": "equal",
+			"operand": "text.magik, source.magik"
+		}]
+	}
+
+]

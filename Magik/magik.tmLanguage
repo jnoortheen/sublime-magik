@@ -54,11 +54,34 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#strings_</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#symbols</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#booleans</string>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>booleans</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.magik</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>([a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*)\?)</string>
+			<key>name</key>
+			<string>variable.other.magik</string>
+		</dict>
 		<key>builtins</key>
 		<dict>
 			<key>include</key>
@@ -149,6 +172,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#strings_</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#comments</string>
 				</dict>
 				<dict>
@@ -216,11 +243,20 @@
 		<key>strings</key>
 		<dict>
 			<key>begin</key>
-			<string>(\"|\')</string>
+			<string>(\")</string>
 			<key>end</key>
-			<string>\"|\'</string>
+			<string>(\")</string>
 			<key>name</key>
 			<string>string.quoted.double.magik</string>
+		</dict>
+		<key>strings_</key>
+		<dict>
+			<key>begin</key>
+			<string>(\')</string>
+			<key>end</key>
+			<string>(\')</string>
+			<key>name</key>
+			<string>string.quoted.single.magik</string>
 		</dict>
 		<key>symbols</key>
 		<dict>
