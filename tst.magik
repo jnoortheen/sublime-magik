@@ -1,0 +1,14 @@
+_pragma(classify_level=basic, topic={basic}, usage={basic})
+_method class_name.new(arg1, )
+	##
+	## exemplar new method 
+	##
+	## Input parameters:
+	## arg1 -  
+	##  
+
+	_return _clone.init(arg1?, )
+_endmethod
+$
+# 0.00048804283142089844 - with extract all completions 
+method

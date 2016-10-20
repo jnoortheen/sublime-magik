@@ -1,0 +1,1 @@
+3.	fetch completions from the same folder the file has been opened from

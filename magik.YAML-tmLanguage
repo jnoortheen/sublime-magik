@@ -8,24 +8,31 @@ uuid: a451e5fa-5ef0-47cb-8f77-57d09e40b794
 # foldingStopMarker: (_endloop|_endif|_endmethod)
 
 patterns:
+- include: '#docstrings'
+- include: '#comments'
+- include: '#encodings'
 - include: '#blocks'
 - include: '#builtins'
-- include: '#comments'
-- include: '#docstrings'
 - include: '#keywords'
 - include: '#methods'
 - include: '#numbers'
 - include: '#operators'
 - include: '#packages'
 - include: '#strings'
+- include: '#strings_'
 - include: '#symbols'
+- include: '#booleans'
 
 repository:
   docstrings:
     name: comment.block.documentation.magik
     begin: (##)
-    captures:
-      '0': {name: punctuation.definition.comment.magik}
+    beginCaptures:
+      '1': {name: comment.line.number-sign.magik}
+    end: \n
+  encodings:
+    name: comment.line.percentage.magik
+    begin: (#%)
     end: \n
   comments:
     name: comment.line.number-sign.magik
@@ -33,6 +40,13 @@ repository:
     beginCaptures:
       "0": { name: punctuation.definition.comment.magik }
     end: \n
+  chars:
+    name: constant.character.magik
+    begin: (%)
+    end: (\s+)
+  illegal:
+    name: invalid.illegal.unrecognized.magik
+    match: ([^\s}])
   parameters:
     name: variable.parameter.magik
     match: \w+
@@ -44,8 +58,12 @@ repository:
       "1": { name: storage.modifier.magik }
   strings:
     name: string.quoted.double.magik
-    begin: (\"|\')
-    end: \"|\'
+    begin: (\")
+    end: (\")
+  strings_:
+    name: string.quoted.single.magik
+    begin: (\')
+    end: (\')
   numbers:
     name: constant.numeric.magik
     match: \b[0-9]+\b
@@ -54,6 +72,11 @@ repository:
     match: (:[a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*))
     captures:
       '0': {name: constant.other.symbol.magik}
+  booleans:
+    name: variable.other.magik
+    match: ([a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*)\?)
+    captures:
+      '0': {name: variable.other.magik}
   operators:
     name: keyword.operator.magik
     match: ([<<|>>|\-|\+|\*|/|=|<>|~])
@@ -81,6 +104,7 @@ repository:
     - include: '#keywords'
     - include: '#builtins'
     - include: '#strings'
+    - include: '#strings_'
     - include: '#comments'
     - include: '#docstrings'
     - include: '#parameters'

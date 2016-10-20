@@ -53,6 +53,20 @@
                         "cmd_postfix": "\n$\n",
                         "syntax": "Packages/Magik/magik.tmLanguage"
                         }
+                    },
+                    {"command": "repl_open", 
+                     "caption": "npcl_sbi_open-sbidev",
+                     "id": "repl_magik_npcl_sbi",
+                     "mnemonic": "M",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["\\\\sbidev\\smallworld\\EO434\\product\\bin\\x86\\sw_magik_win32.exe", "-image", "\\\\sbidev\\npcl_sbi_gss_custom\\images\\npcl_sbi_open.msf", "-cli", "-login", "root/rpc@delncr"],
+                        "cwd": "D:\\RPC_Workspace",
+                        "external_id": "magik",
+                        "cmd_postfix": "\n$\n",
+                        "syntax": "Packages/Magik/magik.tmLanguage"
+                        }
                     }
                     // any more magik alias file configurations can be done here.
                 ]
