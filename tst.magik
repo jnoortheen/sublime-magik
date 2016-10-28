@@ -10,10 +10,25 @@ _method class_name.new(arg1, )
 	## Input parameters:
 	## arg1 -  
 	##  
-	
+	_self.
+
 	_return _clone.init(arg1?, )
 _endmethod
 $
+
+_pragma(classify_level=basic, topic={basic}, usage={basic})
+_iter _method class_name.method_name(arg1, )
+	##
+	## method description 
+	##
+	## Input parameters:
+	## arg1 -  
+	##  
+
+	
+_endmethod
+$
+
 # 0.00048804283142089844 - with extract all completions 
 class_name.fsf
 -1234
@@ -27,6 +42,7 @@ class_name.fsf
 "songle"
 :|sdf| :|sddf()|
 %uni
+%u
 l _cf anoter
 1 _isnt _unset
 _div 

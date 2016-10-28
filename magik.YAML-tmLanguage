@@ -43,7 +43,7 @@ patterns:
   match: (%u)(.)+\b
 
 - comment: character name like %newline ... 
-  name: constant.character.unicode.magik
+  name: constant.character.magik
   match: (%)(.)+\b
 
 - comment: symbols like :a_symbol

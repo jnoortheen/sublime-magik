@@ -6,6 +6,21 @@ settings:
 - name: String
   scope: string
   settings: {foreground: '#009933'}
+- name: Character
+  scope: constant.character
+  settings: {foreground: '#EEAD0E'}
+- name: UnicodeCharacter
+  scope: constant.character.unicode
+  settings: {foreground: '#CD950C'}
+- name: Symbols
+  scope: variable.other.symbol
+  settings: {foreground: '#FF00FF'}
+- name: Booleans
+  scope: variable.other
+  settings: {foreground: '#00CD66'}
+- name: ClassVars
+  scope: variable.language
+  settings: {foreground: '#FF0000'}
 - name: Number
   scope: constant.numeric
   settings: {foreground: '#551A8B'}

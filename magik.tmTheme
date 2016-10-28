@@ -38,6 +38,61 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Character</string>
+			<key>scope</key>
+			<string>constant.character</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#EEAD0E</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>UnicodeCharacter</string>
+			<key>scope</key>
+			<string>constant.character.unicode</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CD950C</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Symbols</string>
+			<key>scope</key>
+			<string>variable.other.symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF00FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Booleans</string>
+			<key>scope</key>
+			<string>variable.other</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00CD66</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ClassVars</string>
+			<key>scope</key>
+			<string>variable.language</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF0000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Number</string>
 			<key>scope</key>
 			<string>constant.numeric</string>
