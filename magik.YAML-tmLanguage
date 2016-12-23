@@ -23,7 +23,7 @@ patterns:
 
 - comment: a single line comment
   name: comment.line.number-sign.magik
-  match: ^(#)(?!((##)|(#%))).*$\n?
+  match: (#)(?!((##)|(#%))).*$\n?
   captures:
     '1': {name: punctuation.definition.comment.magik}
 
@@ -40,7 +40,7 @@ patterns:
 
 - comment: unicode character like %u000e ... 
   name: constant.character.unicode.magik
-  match: (%u)(.)+\b
+  match: (%u)(\w)+\b
 
 - comment: character name like %newline ... 
   name: constant.character.magik
@@ -48,7 +48,7 @@ patterns:
 
 - comment: symbols like :a_symbol
   name: variable.other.symbol.magik
-  match: (:)(\w+)\b
+  match: (\:\w+)\b
 
 - comment: lebel or global variable expression
   name: variable.other.label.magik

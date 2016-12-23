@@ -76,7 +76,7 @@
 			<key>comment</key>
 			<string>a single line comment</string>
 			<key>match</key>
-			<string>^(#)(?!((##)|(#%))).*$\n?</string>
+			<string>(\s+)(#)(?!((##)|(#%))).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.number-sign.magik</string>
 		</dict>
@@ -106,7 +106,7 @@
 			<key>comment</key>
 			<string>unicode character like %u000e ...</string>
 			<key>match</key>
-			<string>(%u)(.)+\b</string>
+			<string>(%u)(\w)+\b</string>
 			<key>name</key>
 			<string>constant.character.unicode.magik</string>
 		</dict>
@@ -116,13 +116,13 @@
 			<key>match</key>
 			<string>(%)(.)+\b</string>
 			<key>name</key>
-			<string>constant.character.unicode.magik</string>
+			<string>constant.character.magik</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>symbols like :a_symbol</string>
 			<key>match</key>
-			<string>(:)(\w+)\b</string>
+			<string>(\:\w+)\b</string>
 			<key>name</key>
 			<string>variable.other.symbol.magik</string>
 		</dict>
