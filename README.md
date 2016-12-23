@@ -13,7 +13,11 @@
 
 ## Screenshots
 
+![Magik Theme](./img/magik_theme.png?raw=true)  
 
+![Magik Completions](./img/snippets_and_completions.gif?raw=true)  
+
+![Magik Completions](./img/sublime_packages.PNG?raw=true)  
 
 ## Smallworld Session
 
