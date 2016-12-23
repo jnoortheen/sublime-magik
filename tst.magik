@@ -41,8 +41,8 @@ class_name.fsf
 :sdf 
 "songle"
 :|sdf| :|sddf()|
-%uni
-%u
+%uni # unicode
+%u # character
 l _cf anoter
 1 _isnt _unset
 _div 
@@ -64,3 +64,4 @@ print()
 list[1]
 
 'single quoted string'
+
